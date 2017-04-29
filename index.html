@@ -7,36 +7,38 @@
     <title></title>
 </head>
 <body>
-    <form action="">
-        <div>
-          <input type="text" id="name" placeholder="Ingresa nombre">
-        </div>
-        <div>
-          <input type="text" id="dni" placeholder="Ingresa DNI">
-        </div>
-        <div>
-          <input type="text" id="date" onfocus="(this.type='date')" placeholder="Ingresa fecha de cumpleaños">
-        </div>
-        <div>
-          <input type="text" placeholder="Ingresa número de celular" id="cellphone">
-        </div>
-        <div>
-          <input type="text" placeholder="Ingresa número de teléfono" id="phone">
-        </div>
-        <div>
-          <input type="password" placeholder="Ingresa Contraseña" id="pass">
-        </div>
-        <div>
-          <input type="password" placeholder="Confirma tu contraseña" id="pass-2">
-        </div>
-        <div>
-          <textarea placeholder="Ingresa comentario" cols="30" rows="10" id="comment" maxlength="140" minlength="10"></textarea>
-        </div>
-        <div>
-          <input type="checkbox" id="term-cond"><label for="term-cond">Acepto los términos y condiciones</label>
-        </div>
-        <button type="submit" id="btn-submit">Eniviar</button>
-    </form>
+        <form action="" method="post" class="form-container">
+            <div class="elem-box">
+              <input type="text" id="name" placeholder="Ingresa nombre" class="in-data" autofocus>
+            </div>
+            <div class="elem-box">
+              <input type="text" id="dni" placeholder="Ingresa DNI" class="in-data">
+            </div>
+            <div class="elem-box">
+              <input type="text" id="date" onfocus="(this.type='date')" placeholder="Ingresa fecha de cumpleaños" class="in-data">
+            </div>
+            <div class="elem-box">
+              <input type="text" placeholder="Ingresa número de celular" id="cellphone" class="in-data">
+            </div>
+            <div class="elem-box">
+              <input type="text" placeholder="Ingresa número de teléfono" id="phone" class="in-data">
+            </div>
+            <div class="elem-box">
+              <input type="password" placeholder="Ingresa Contraseña" id="pass" class="in-data">
+            </div>
+            <div class="elem-box">
+              <input type="password" placeholder="Confirma tu contraseña" id="pass-2" class="in-data">
+            </div>
+            <div class="elem-box">
+              <textarea placeholder="Ingresa comentario" rows="10" id="comment" maxlength="140" minlength="10" class="in-data"></textarea>
+            </div>
+            <div class="elem-box">
+              <input type="checkbox" id="term-cond"><label for="term-cond">Acepto los términos y condiciones</label>
+            </div>
+            <div class="elem-box">
+                <button type="submit" id="btn-submit">Enviar</button>
+            </div>
+        </form>
     <script src="assets/js/app.js" type="text/javascript"></script>
 </body>
 </html>

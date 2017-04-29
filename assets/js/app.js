@@ -1,3 +1,15 @@
+function DataPerson(nombre, dni, fechNac, cel, tel, clave, clave2, comentario, termYCond){
+    this.nombre = nombre;
+    this.dni = dni;
+    this.fechNac = fechNac;
+    this.tel = tel;
+    this.cel = cel;
+    this.clave = clave;
+    this.clave2 = clave2;
+    this.comentario = comentario;
+    this.termYCond = termYCond;
+}
+
 var regFirstCapLet = /^[A-Z][a-z]+$/;
 var regDni = /^\d{8}$/;
 var regCellPhone = /^[9]\d{8}$/;
@@ -8,7 +20,7 @@ var regPass = /^\S{6}$/;
 var name1 = document.getElementById("name")
 var dni = document.getElementById("dni");
 var date = document.getElementById("date");
-var cellPhone = document.getElementById("cellphone");
+var cell = document.getElementById("cellphone");
 var phone = document.getElementById("phone");
 var pass = document.getElementById("pass");
 var pass2 = document.getElementById("pass-2");
@@ -89,7 +101,7 @@ window.addEventListener("load", function(){
     isAdult(date.value, "Eres menor de edad, aún no puedes enviar el mensaje");
   })
 
-  cellPhone.addEventListener("blur", function(){
+  cell.addEventListener("blur", function(){
     validateEachInput(regCellPhone, "Ingresa formato correcto");
   });
 
@@ -103,10 +115,14 @@ window.addEventListener("load", function(){
 
   pass2.addEventListener("blur", function(){
     validateEachInput(regPass, "Mínimo 6 carácteres");
-    validateSamePass(pass.value, pass2.value, "Ingresa la misma contraseña");
+    (pass.value != "")? validateSamePass(pass.value, pass2.value, "Ingresa la misma contraseña"): "";
   });
 
   termCond.addEventListener("blur", function(){
     validateCheckBox("Leer y aceptar los términos y condiciones");
+  });
+    
+  document.getElementById("btn-submit").addEventListener("click", function(){
+      var newPerson = new DataPerson(name1.value, dni.value, date.value, cell.value, phone.value, pass.value, pass2.value, comment.value, termCond.value);
   });
 });
